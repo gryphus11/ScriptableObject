@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336a9b6b9993ef5428917ab8ba250d28, type: 3}
+  m_Name: ParentScriptableObject
+  m_EditorClassIdentifier: 
+  childScriptableObject: {fileID: 114589108596149454}
+  progress: 35
+  name: SJH
+--- !u!114 &114589108596149454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b592e1b6856f54487bc51ca011901d, type: 3}
+  m_Name: new Child
+  m_EditorClassIdentifier: 
+  childString: 
