@@ -7,8 +7,13 @@ public class CDataManager : ScriptableObject
 {
     public float progress = 35.0f;
 
-    private static void CreateScriptableObject()
+    private void OnEnable()
     {
+        Debug.Log("Manager Called");
+    }
 
+    private void OnDisable()
+    {
+        Debug.Log("Manager Disabled");
     }
 }
