@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CSampleScriptableObject : ScriptableObject
 {
@@ -11,22 +10,23 @@ public class CSampleScriptableObject : ScriptableObject
 
     [Range (0.0f, 100.0f)]
     public float progress = 0.0f;
-
-    [MenuItem("Sample/Create SampleAsset")]
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Sample/Create SampleAsset")]
     private static void CreateSampleAsset()
     {
         CSampleScriptableObject sampleAsset = CreateInstance<CSampleScriptableObject>();
 
-        AssetDatabase.CreateAsset(sampleAsset, "Assets/SampleAssets/SampleAsset.asset");
-        AssetDatabase.Refresh();
+        UnityEditor.AssetDatabase.CreateAsset(sampleAsset, "Assets/SampleAssets/SampleAsset.asset");
+        UnityEditor.AssetDatabase.Refresh();
     }
 
-    [MenuItem("Sample/Load SampleAsset")]
+    [UnityEditor.MenuItem("Sample/Load SampleAsset")]
     private static void LoadSampleAsset()
     {
-        CSampleScriptableObject sampleAsset = AssetDatabase.
+        CSampleScriptableObject sampleAsset = UnityEditor.AssetDatabase.
             LoadAssetAtPath<CSampleScriptableObject>("Assets/SampleAssets/SampleAsset.asset");
 
         Debug.Log(sampleAsset._line);
     }
+#endif
 }

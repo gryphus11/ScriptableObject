@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CParentScriptableObject : ScriptableObject
 {
@@ -10,8 +9,8 @@ public class CParentScriptableObject : ScriptableObject
     public string name = "SJH";
 
     private const string PATH = "Assets/SampleAssets/ParentScriptableObject.asset";
-
-    [MenuItem("Sample/Create Parent Scriptable Object")]
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Sample/Create Parent Scriptable Object")]
     private static void CreateScriptableObject()
     {
         CParentScriptableObject parent = ScriptableObject.CreateInstance<CParentScriptableObject>();
@@ -20,20 +19,21 @@ public class CParentScriptableObject : ScriptableObject
         parent.childScriptableObject.name = "new Child";
         parent.childScriptableObject.hideFlags = HideFlags.HideInHierarchy;
 
-        AssetDatabase.AddObjectToAsset(parent.childScriptableObject, PATH);
-        AssetDatabase.CreateAsset(parent, PATH);
-        AssetDatabase.ImportAsset(PATH);
+        UnityEditor.AssetDatabase.AddObjectToAsset(parent.childScriptableObject, PATH);
+        UnityEditor.AssetDatabase.CreateAsset(parent, PATH);
+        UnityEditor.AssetDatabase.ImportAsset(PATH);
     }
 
-    [MenuItem("Sample/Remove Child Scriptable Object")]
+    [UnityEditor.MenuItem("Sample/Remove Child Scriptable Object")]
     private static void RemoveChildScriptableObject()
     {
-        CParentScriptableObject parent = AssetDatabase.LoadAssetAtPath<CParentScriptableObject>(PATH);
+        CParentScriptableObject parent = UnityEditor.AssetDatabase.LoadAssetAtPath<CParentScriptableObject>(PATH);
 
         Object.DestroyImmediate(parent.childScriptableObject, true);
 
         parent.childScriptableObject = null;
 
-        AssetDatabase.ImportAsset(PATH);
+        UnityEditor.AssetDatabase.ImportAsset(PATH);
     }
+#endif
 }

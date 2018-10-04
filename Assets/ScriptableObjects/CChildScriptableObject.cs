@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CChildScriptableObject : ScriptableObject
 {
@@ -7,12 +6,14 @@ public class CChildScriptableObject : ScriptableObject
 
     private const string PATH = "Assets/SampleAssets/ChildScriptableObject.asset";
 
-    [MenuItem("Sample/Create Child Scriptable Object")]
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Sample/Create Child Scriptable Object")]
     private static void CreateScriptableObject()
     {
         CChildScriptableObject child = ScriptableObject.CreateInstance<CChildScriptableObject>();
 
-        AssetDatabase.CreateAsset(child, PATH);
-        AssetDatabase.ImportAsset(PATH);
+        UnityEditor.AssetDatabase.CreateAsset(child, PATH);
+        UnityEditor.AssetDatabase.ImportAsset(PATH);
     }
+#endif
 }

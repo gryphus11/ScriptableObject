@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336a9b6b9993ef5428917ab8ba250d28, type: 3}
   m_Name: ParentScriptableObject
   m_EditorClassIdentifier: 
-  childScriptableObject: {fileID: 114589108596149454}
+  childScriptableObject: {fileID: 114210715778699476}
   progress: 35
   name: SJH
---- !u!114 &114589108596149454
+--- !u!114 &114210715778699476
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
