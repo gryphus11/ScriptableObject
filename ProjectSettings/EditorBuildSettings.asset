@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/01_ScriptableObjectSceneChange/ScriptableObjectTest1.unity
-    guid: dc93976008377354fa17049f647974e0
+    path: Assets/Scenes/02_ScriptableObjectLifeTime/ButtonTest/ButtonScene1.unity
+    guid: fdce298eb18e9d846b55490cf6bdff7f
   - enabled: 1
-    path: Assets/Scenes/01_ScriptableObjectSceneChange/ScriptableObjectTest2.unity
-    guid: c49014b3fe9537a4d922296942174280
+    path: Assets/Scenes/02_ScriptableObjectLifeTime/ButtonTest/ButtonScene2.unity
+    guid: 36995885ab179e848b8bc165dfdcc702
   - enabled: 1
-    path: Assets/Scenes/01_ScriptableObjectSceneChange/ScriptableObjectTest3.unity
-    guid: e9e1d82f8bbbad445bc2741b1fe0a276
+    path: Assets/Scenes/02_ScriptableObjectLifeTime/ButtonTest/NoScriptableObjectRef.unity
+    guid: 9a8e63a8c7be5044f83aee58cfc0b2c6
   m_configObjects: {}
